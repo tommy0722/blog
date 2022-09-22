@@ -14,8 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return 'hi';
-    // return view('welcome');
+    // return 'hi';
+    return  view('welcome');
+});
+Route::get('/cat/{id}/{name}', function ($id,$name) {
+    return  "我是第 $id 的貓: $name";
 });
 
 // Route::get("/about");
