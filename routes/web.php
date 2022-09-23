@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\welcomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,5 +20,5 @@ Route::get('/', function () {
 Route::get('/cat/{id}/{name}', function ($id,$name) {
     return  "我是第 $id 的貓: $name";
 });
-
-// Route::get("/about");
+//           URL        class                    function
+Route::get("/about",[welcomeController::class, 'about']);
