@@ -8,7 +8,8 @@ class welcomeController extends Controller
 {
     public function about(){
         // return "hi";
-        return view("page/about");
+        $name="悟空";
+        return view("page/about",['x'=>$name]);
         // 用.也可以
         // return view("page.about");
     }
