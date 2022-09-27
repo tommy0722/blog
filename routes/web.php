@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\welcomeController;
 /*
@@ -22,3 +23,8 @@ Route::get('/cat/{id}/{name}', function ($id,$name) {
 });
 //           URL        class                    function
 Route::get("/about",[welcomeController::class, 'about']);
+                                                //只顯示insex,show
+Route::resource('posts',PostController::class)->only(['index','show']);
+                                                //不顯示insex,show
+// Route::resource('posts',PostController::class)->except(['index','show']);
+Route::resource("posts.commits",PostController::class);
